@@ -27,11 +27,12 @@ rp(url)
           , Score: $("span.fv-votes", element).text()
         }
 
+        console.log(aCat.ID)
+        console.log(aCat.Name)
+        console.log(aCat.Score)
 
-        //console.log(a.text());
-        console.log(a.attr('data-id'))
-        console.log($("div.fv_name_inner", element).text())
-        console.log($("span.fv-votes", element).text())
+        cats.push(aCat)
+        
         
         
         //console.log(element.children[0].children[0].data);
