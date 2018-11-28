@@ -4,6 +4,9 @@ var cheerio = require('cheerio');
 const rp = require('request-promise');
 const url = 'https://photos.vetsure.com/cats/?fv-page=2#contest';
 
+cats = [];
+
+
 rp(url)
   .then(function(html){
     //success!
@@ -16,9 +19,17 @@ rp(url)
     
     $('div.fv_constest_item').each(function(i, element){
         var a = $(this);
+
+        var aCat =
+        {
+            ID: a.attr('data-id')
+          , Name: $("div.fv_name_inner", element).text()
+          , Score: $("span.fv-votes", element).text()
+        }
+
+
         //console.log(a.text());
-        console.log("**********************************************************");
-        console.log(a.attr)
+        console.log(a.attr('data-id'))
         console.log($("div.fv_name_inner", element).text())
         console.log($("span.fv-votes", element).text())
         
