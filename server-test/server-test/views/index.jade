@@ -1,0 +1,29 @@
+extends layout
+
+
+
+block content
+
+  h1= title
+  p Welcome to #{title}
+  
+
+
+  
+  
+  
+  
+  input(class='jscolor')
+  
+  img(src='/images/bulb.svg' onclick='something()')
+  
+  br
+  
+  div
+    label(for='bulb') Bulb:
+    button(id='myButton2' class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}") Change Colour
+    button(id='myButton' onclick='something()') Set
+    
+    
+  script(src= '/javascripts/myScript.js')
+  script(src= '/javascripts/jscolor.js')
