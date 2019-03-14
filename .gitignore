@@ -74,3 +74,6 @@ typings/
 
 # FuseBox cache
 .fusebox/
+SHHMLikesCounter/facebook.txt
+SHHMLikesCounter/twitter.txt
+SHHMLikesCounter/temp.txt
