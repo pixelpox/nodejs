@@ -7,19 +7,24 @@ html
 			include ../assets/style.css
 
 body
-	h1= title
-	p welcome to #{title}
-
 	div.main
-		p just a div
 		.head
-			h1 When is the next bin?
+			h1 When Is The Next Bin?
+			h1= title
 
 		div.binImage
 			p here is where the bin image goes
 
 		div.binText
 			p here is the text for the next bin collection
+
+			if bins.length
+				P FOUND BINS
+				each bin in bins
+					p= bin.collectionDate
+					p= bin.binColour
+			else
+				P NO BINS FOUND
 
 		.binDate
 			p here is where the date for the bin goes
