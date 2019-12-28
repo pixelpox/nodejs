@@ -1,0 +1,14 @@
+* {font-family:arial, sans-serif;}
+
+p {
+	font-family: "Times New Roman", Times, serif;
+	color: DodgerBlue;
+}
+
+div {
+	background-color: LightGray;
+}
+
+h1 {
+	text-align: center;
+}
