@@ -10,21 +10,30 @@ body
 	div.main
 		.head
 			h1 When Is The Next Bin?
-			h1= title
+
+		div.binDate
+			if bins.collectionDate
+				p= moment(bins.collectionDate).format('Do MMMM YYYY')
+			else
+				p Something went wrong! :(
 
 		div.binImage
-			p here is where the bin image goes
+			case bins.binColour
+				when 'PINK'
+					img(src="../img/pinkBin.jpg", alt="PINK BIN")
+				when 'BLACK'
+					p= bins.binColour
+				when 'GREEN'
+					p= bins.binColour
 
 		div.binText
-			p here is the text for the next bin collection
+			case bins.binColour
+				when 'PINK'
+					p= bins.binColour
+				when 'BLACK'
+					p= bins.binColour
+				when 'GREEN'
+					p= bins.binColour
 
-			if bins.length
-				P FOUND BINS
-				each bin in bins
-					p= bin.collectionDate
-					p= bin.binColour
-			else
-				P NO BINS FOUND
-
-		.binDate
-			p here is where the date for the bin goes
+				default
+					p Something went wrong! :(

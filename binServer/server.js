@@ -33,6 +33,10 @@ app.use('/date', dateRouter)
 app.use('/bin', binRouter)
 app.use('/', indexRouter)
 
+app.use(express.static(__dirname + '/static'));
+
+app.locals.moment = require('moment');
+
 
 
 app.listen(port, () => {  console.log('We are live on ' + port);});
